@@ -1,6 +1,6 @@
 # Linux-Note
 
-#關機指令
+# 關機指令
 halt -p、poweroff、shutdown
 #新增文字檔
 gedit a.txt
