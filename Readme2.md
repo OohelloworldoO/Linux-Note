@@ -1,3 +1,4 @@
+# Linux-Note2
 ```
 chmod :change mode
 /usr 放第三方軟體的資料夾
