@@ -1,8 +1,8 @@
 # Linux-Note
 
-*關機指令
+#關機指令
 halt -p、poweroff、shutdown
-*新增文字檔
+#新增文字檔
 gedit a.txt
 看檔案:cat+檔案名、more+檔名、less+檔名
 ping on windows and linux are diffrent on TTL、bytes、times
