@@ -79,4 +79,16 @@ wc:word count
 lsblk
 
 ~-  :previous working directory
+
+wc : word count
+
+find 以檔案名稱為主
+grep 檔案內容為主(content)
+
+ls -l -d 才是檢視檔案資訊
+ls -l 是檢視檔案內內容
+
+       {a}
+  u     g     o
+r w x r w x r w x
 ```
