@@ -1,17 +1,12 @@
 # Linux-Note1
 
-關機指令
-halt -p、poweroff、shutdown
-新增文字檔
-gedit a.txt
-看檔案
-```
-cat+檔案名、more+檔名、less+檔名
+關機指令:halt -p、poweroff、shutdown
+新增文字檔:gedit a.txt
+看檔案:cat+檔案名、more+檔名、less+檔名
 ping on windows and linux are diffrent on TTL、bytes、times
 windows:ipconfig
 linux:ifconfig，linux want to break the ping(ctrl+c to break)
-```
-```
+
 systemctl:      service:
 start		sshd
 stop        +	httpd
@@ -20,8 +15,7 @@ reload
 status
 disable
 enable
-```
-```
+
 最後ㄉd 代表=daemon
 
 root使用者提示字元是#
@@ -54,7 +48,7 @@ ls -l(長格式) -a (all) -h
  ---   ---    ---
 owner group  other
 r可讀
-w可寫    的權限
+w新增創建刪除修改    的權限
 x可執行
 d目錄
 -檔案
@@ -107,4 +101,3 @@ cat <<aaa >a.txt
 >2
 >3
 >aaa(輸入就結束)
-```
