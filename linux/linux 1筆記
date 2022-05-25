@@ -6,8 +6,7 @@
 ping on windows and linux are diffrent on TTL、bytes、times
 windows:ipconfig
 linux:ifconfig，linux want to break the ping(ctrl+c to break)
-```
-```
+
 systemctl:      service:
 start		sshd
 stop        +	httpd
@@ -18,11 +17,11 @@ disable
 enable
 
 最後ㄉd 代表=daemon
-```
-```
+
 root使用者提示字元是#
 一般使用者是$
-```
+
+
 cat 顯示內容用
 hostname 系統
 pwd顯示路徑
