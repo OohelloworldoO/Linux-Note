@@ -1,0 +1,94 @@
+# Linux-Note2
+```
+chmod :change mode
+/usr 放第三方軟體的資料夾
+/bin 第三方可執行的目錄
+source .bashrc=. .bashrc(立即變數生效)
+. .bashrc 第一個.是隱藏檔案
+
+echo "2" =echo "2" 1(1是表準輸出，代表螢幕，可省略)螢幕顯示2
+echo "2" 1>a.sh =echo "2" >a.sh 
+
+| :管道，把前面的輸出當作後面的輸入
+但不一定每個東西都可以直接這樣做
+例如密碼:
+echo "tom" | passwd --stdin tom
+
+grep :過濾
+egrep :擴充過濾
+
+
+# a 開頭
+ls | grep "^a"
+# b 結尾
+ls | grep "b$"
+# a 或 b 開頭
+ls | grep "^[ab]"
+# a 或 b 結尾
+ls | grep "[ab]$"
+
+"^$" :空白行
+- :標準輸入，當作檔案開啟
+--include= :選擇特定檔案
+-r :遞迴(recursive)去尋找
+-n :顯示在第幾個位置
+-v :不包含
+-i :不分大小寫
+-A :after，當前那行+之後幾行
+-B :before，當前那行+之前幾行
+-C :context，前後幾行
+-type :指定檔案類型
+     d:目錄
+     f:一般檔
+     l:連結檔
+
+列出目前目錄底下所有的 PHP 檔案：
+find . -type f -name "*.php"
+
+-perm 可以指定檔案的權限，例如列出權限是 777 的所有檔案：
+find . -type f -perm 0777
+0:
+ suid(4) 在使用者，有被設定，=4。執行時，權限升級到root，執行完畢變回原本一般權限
+ sgid(2) 在使用者群組，有被設定，=2
+ stickybit(1) 有被設定，=1，任何人都可以讀寫，擁有者才能刪除
+ 都被設定就會變成7xxx(4+2+1)
+
+which/whereis(找完整檔案資訊) :找執行檔路徑，從PATH設定部分一個個找下去
+find  :在檔案系內搜尋特定檔案，條件式搜尋；但執行效能差
+locate :去database找，使用前要使用資料庫更新(updatedb)
+
+stat a
+access: 有讀取 
+modify:修改內容  
+change:修改內容或修改權限
+
+cat:讀取檔案、從標準輸出讀取
+tac:顯示檔案內容(編檔方法呈現)
+
+wc:word count
+
+<   
+<<  代表是一串顯示，最後終止於<<後的
+<<< 代表是字串
+
+通配符规则(萬用字)：
+ *   代表任意字符(0到多个)
+？  代表一个字符
+[ ]  中间为字符组合，仅匹配其中任一一个字符
+
+lsblk
+
+~-  :previous working directory
+
+wc : word count
+
+find 以檔案名稱為主
+grep 檔案內容為主(content)
+
+ls -l -d 才是檢視檔案資訊
+ls -l 是檢視檔案內內容
+
+       {a}
+  u     g     o
+r w x r w x r w x
+```
