@@ -1,5 +1,5 @@
 # Linux-Note2
-```
+
 chmod :change mode
 /usr 放第三方軟體的資料夾
 /bin 第三方可執行的目錄
@@ -91,4 +91,4 @@ ls -l 是檢視檔案內內容
        {a}
   u     g     o
 r w x r w x r w x
-```
+
