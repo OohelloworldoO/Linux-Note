@@ -101,9 +101,9 @@ ps -ef/ps -aux 顯示所有包含其他使用者的行程
 用戶們可以通過cron在固定時間、日期、間隔下，運行定期任務（可以是命令和腳本）
 不想看到本身cron的資訊可以用 grep [c]ron 來過濾
 
-echo $$ =印出process Id
+echo $$ =印出process Id(行程)
 
-kill + PID =中斷，重啟...
+kill + PID(行程) =中斷，重啟...
 
 指令的最後+& =放在背景去執行
 
