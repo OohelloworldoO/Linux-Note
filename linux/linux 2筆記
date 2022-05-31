@@ -76,7 +76,7 @@ wc:word count
 ？  代表一个字符
 [ ]  中间为字符组合，仅匹配其中任一一个字符
 
-lsblk
+lsblk 列出所有設備
 
 ~-  :previous working directory
 
@@ -103,3 +103,8 @@ ps -ef/ps -aux 顯示所有包含其他使用者的行程
 
 echo $$ =印出process Id
 
+kill + PID =中斷，重啟...
+
+指令的最後+& =放在背景去執行
+
+指令前+time 可以看執行時花多少時間
