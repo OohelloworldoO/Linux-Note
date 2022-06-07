@@ -1,6 +1,7 @@
 # Linux-Note1
-```
+
 關機指令:halt -p、poweroff、shutdown
+重新開機:reboot
 新增文字檔:gedit a.txt
 看檔案:cat+檔案名、more+檔名、less+檔名
 ping on windows and linux are diffrent on TTL、bytes、times
@@ -101,4 +102,3 @@ cat <<aaa >a.txt
 >2
 >3
 >aaa(輸入就結束)
-```
