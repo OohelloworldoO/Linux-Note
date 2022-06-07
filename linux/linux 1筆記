@@ -1,110 +1,104 @@
-# Linux-Note2
+# Linux-Note1
+```
+關機指令:halt -p、poweroff、shutdown
+新增文字檔:gedit a.txt
+看檔案:cat+檔案名、more+檔名、less+檔名
+ping on windows and linux are diffrent on TTL、bytes、times
+windows:ipconfig
+linux:ifconfig，linux want to break the ping(ctrl+c to break)
 
-chmod :change mode
-/usr 放第三方軟體的資料夾
-/bin 第三方可執行的目錄
-source .bashrc=. .bashrc(立即變數生效)
-. .bashrc 第一個.是隱藏檔案
+systemctl:      service:
+start		sshd
+stop        +	httpd
+restart		firewalld
+reload 
+status
+disable
+enable
 
-echo "2" =echo "2" 1(1是表準輸出，代表螢幕，可省略)螢幕顯示2
-echo "2" 1>a.sh =echo "2" >a.sh 
+最後ㄉd 代表=daemon
 
-| :管道，把前面的輸出當作後面的輸入
-但不一定每個東西都可以直接這樣做
-例如密碼:
-echo "tom" | passwd --stdin tom
+root使用者提示字元是#
+一般使用者是$
 
-grep :過濾
-egrep :擴充過濾
+cat 顯示內容用
+hostname 系統
+pwd顯示路徑
+whoami 使用者名稱
+~ =home directory
+cd ~ =change to home directory
+w(可看線上使用者正在做啥)、who 查詢目前有誰正在系統上  tty是本端  pts是遠端
 
+linux=kernal+shell+application(由內往外)
+不同的shell + 不同的application = 各種不同發行的版本
 
-# a 開頭
-ls | grep "^a"
-# b 結尾
-ls | grep "b$"
-# a 或 b 開頭
-ls | grep "^[ab]"
-# a 或 b 結尾
-ls | grep "[ab]$"
+uname -r 查看kernal版本
+uname -a 看更詳細
+x86 64 for 位元系統
+i386、i486、i586、i686... for 32位元
 
-"^$" :空白行
-- :標準輸入，當作檔案開啟
---include= :選擇特定檔案
--r :遞迴(recursive)去尋找
--n :顯示在第幾個位置
--v :不包含
--i :不分大小寫
--A :after，當前那行+之後幾行
--B :before，當前那行+之前幾行
--C :context，前後幾行
--type :指定檔案類型
-     d:目錄
-     f:一般檔
-     l:連結檔
+ls vmlinuz* 
+* =萬用字(查詢nmlinuz開頭的任意檔案)\
+-l 長格式(long format)顯示
+echo $SHELL(取出環境變量的值，echo出來)
+$ 用來取出變數名稱
+& 用來背景執行
 
-列出目前目錄底下所有的 PHP 檔案：
-find . -type f -name "*.php"
+ls -l(長格式) -a (all) -h
+ ---   ---    ---
+owner group  other
+r可讀
+w新增創建刪除修改    的權限
+x可執行
+d目錄
+-檔案
+l連結
+b硬碟或usb (block)
+c設備(鍵盤、滑鼠) (字元裝置)
 
--perm 可以指定檔案的權限，例如列出權限是 777 的所有檔案：
-find . -type f -perm 0777
-0:
- suid(4) 在使用者，有被設定，=4。執行時，權限升級到root，執行完畢變回原本一般權限
- sgid(2) 在使用者群組，有被設定，=2
- stickybit(1) 有被設定，=1，任何人都可以讀寫，擁有者才能刪除
- 都被設定就會變成7xxx(4+2+1)
+兩種執行腳本的方法:
+bash +檔案名
+./檔案名
 
-which/whereis(找完整檔案資訊) :找執行檔路徑，從PATH設定部分一個個找下去
-find  :在檔案系內搜尋特定檔案，條件式搜尋；但執行效能差
-locate :去database找，使用前要使用資料庫更新(updatedb)
+hostname 可以查看所在主機
+hostname set-hostname centos7-6 更改主機名稱 主機名稱就變成centos7-6
+bash 跑kernal
+pwd 顯示完整路徑(print working directory)
+過濾資料 |grep
+從上往下第1筆資料 |head -n 1
+echo shell 查詢現在使用的核心
+fg foreground前景執行
+ctrl+a 到命令列最前面
+ctrl+e 最後面
+檔案名稱開頭是 '.' 代表是隱藏檔案 需使用-a 來顯示
+ls -l -h -a =ls -lha
+man+查詢的東西=manuscript 手冊，查詢指令使用方法
+su - 使用者名稱 可以變換使用者/su 原本的系統環境變量
+echo "12345678" | passwd --stdin tom 把tom的密碼改成12345678
+-reboot 重新開機
+rm -rf * --->rm:remove -r:recursive -f:force
+/etc --->系統配置 網路配置...很重要的檔案都放在這裡
+/proc --->系統的資訊(cpu、core...)
+resolv.conf --->放dns伺服器的檔案
 
-stat a
-access: 有讀取 
-modify:修改內容  
-change:修改內容或修改權限
-
-cat:讀取檔案、從標準輸出讀取
-tac:顯示檔案內容(編檔方法呈現)
-
-wc:word count
-
-<   
-<<  代表是一串顯示，最後終止於<<後的
-<<< 代表是字串
-
-通配符规则(萬用字)：
- *   代表任意字符(0到多个)
-？  代表一个字符
-[ ]  中间为字符组合，仅匹配其中任一一个字符
-
-lsblk 列出所有設備
-
-~-  :previous working directory
-
-wc : word count
-
-find 以檔案名稱為主
-grep 檔案內容為主(content)
-
-ls -l -d 才是檢視檔案資訊
-ls -l 是檢視檔案內內容
-
-       {a}
-  u     g     o
-r w x r w x r w x
-
-init Unix 和 類Unix 系統中用來產生其它所有行程的程式。它以守護行程的方式存在，其行程號為1。Linux系統在啟動時載入Linux核心後，便由Linux核心載入init程式，由init程式完成餘下的啟動過程，比如載入執行級別，載入服務，啟動Shell/圖形化介面
-
-top/uptime 可以看系統資訊，經常用來監控Linux的系統狀況，比如cpu、內存的使用
-
-ps -ef/ps -aux 顯示所有包含其他使用者的行程
-
-用戶們可以通過cron在固定時間、日期、間隔下，運行定期任務（可以是命令和腳本）
-不想看到本身cron的資訊可以用 grep [c]ron 來過濾
-
-echo $$ =印出process Id(行程)
-
-kill + PID(行程) =中斷，重啟...
-
-指令的最後+& =放在背景去執行
-
-指令前+time 可以看執行時花多少時間
+pwd --當前路徑(指令)(print working directory)
+echo $PWD--當前路徑(系統環境)
+uname -r 看到系統核心版本
+touch 創建檔案
+mkdir 創建目錄
+wget 用來下載
+sudo -l 可以讓使用者知道他是否具有切換成超級使用者的權利,及他可以執行那些超級使用的指令
+echo $? 可以用來檢查前面指令是否成功 0:成功 非0值:失敗
+|head -n 數字 =n筆資料
+|tail -n 數字 =倒數n筆資料
+sed -n "5,10p" 顯示5~10行指令 p:print
+touch 用來創建資料夾或是修改最後編譯時間
+> 資料夾 :清空資料夾
+"" > 資料夾 取代內容
+"" >> 資料夾 追加內容
+cat <<aaa >a.txt
+>1
+>2
+>3
+>aaa(輸入就結束)
+```
